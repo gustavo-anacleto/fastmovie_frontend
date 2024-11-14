@@ -15,7 +15,7 @@ and document the best practices that i have learned.
 
 Based in Atomic Design, the folders was structured like this example:
 
-|--- src/
+|--- src/ 
 |--- assets
 |------------------- user/
 |--------- components/

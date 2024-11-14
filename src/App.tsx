@@ -1,26 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import routes from './routes.json';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const loadComponent = (componentName: string) =>{
+  return React.lazy(() => import(`@/common/pages/${componentName}/index`))
 }
 
-export default App;
+const App: React.FC = () => {
+  return (
+    <BrowserRouter>
+      <React.Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          {routes.map((route, index) => {
+            const Component = loadComponent(route.component);
+            return <Route key={index} path={route.path} element={<Component />} />;
+          })}
+        </Routes>
+      </React.Suspense>
+    </BrowserRouter>
+  )
+}
+
+export default App
