@@ -15,12 +15,12 @@ and document the best practices that i have learned.
 
 Based in Atomic Design, the folders was structured like this example:
 
-|--- src/ 
-|--- assets
-|------------------- user/
-|--------- components/
-|------ atoms
-|------ molecules
-|------ templates
-|------ pages
+|--- src/    
+|--- assets  
+|------------------- user/   
+|--------- components/  
+|------ atoms  
+|------ molecules  
+|------ templates  
+|------ pages  
 
