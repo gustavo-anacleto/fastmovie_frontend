@@ -1,0 +1,17 @@
+@import '@/common/styles/variables';
+
+button{
+    width: 90%;
+    height: 40px;
+    border-radius: 42px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    color: $blueDefaultColor;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.5s;
+
+    &:hover{
+        transform: scale(1.05);
+    }
+}
